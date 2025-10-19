@@ -377,7 +377,19 @@
                 <div class="card">
                     <p><b>Kontakt</b></p>
                     <p class="muted">Schreib mir – kurz dein Vorhaben + Ziel:</p>
-                    <p><a class="btn primary" href="mailto:nicklas@desens.dev">E‑Mail senden</a></p>
+                    <p>
+                        <a class="btn primary" href="mailto:nicklas@desens.dev" id="mailto-btn">E-Mail senden</a>
+                        <button class="btn" type="button" id="copy-mail">Adresse kopieren</button>
+                    </p>
+                    <script>
+                        document.getElementById('copy-mail')?.addEventListener('click', async () => {
+                            try {
+                                await navigator.clipboard.writeText('nicklas@desens.dev');
+                                alert('E-Mail-Adresse in die Zwischenablage kopiert.');
+                            } catch { alert('Kopieren nicht möglich – bitte manuell: nicklas@desens.dev'); }
+                        });
+                    </script>
+
                     <div class="cta"><a class="btn" href="https://www.linkedin.com/in/nicklas-d-588369181/"
                             target="_blank" rel="noreferrer">LinkedIn</a> <a class="btn"
                             href="https://github.com/cyyprezz" target="_blank" rel="noreferrer">GitHub</a></div>
@@ -407,7 +419,7 @@
                                 style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:#0b1220;color:#e2e8f0;resize:vertical"></textarea>
                         </label>
                         <div>
-                            <button class="btn" type="submit">Absenden</button>
+                            <button class="btn primary" type="submit">Absenden</button>
                         </div>
                     </form>
                     <p class="muted" style="font-size:12px;margin-top:6px">Kein Spam. Abmeldung jederzeit möglich.</p>
