@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nicklas Desens – Softwareentwickler (Python · Datenbanken · Automatisierung · KI)</title>
+  <meta name="description" content="Freelancer: Python, Firebird/SQL, ERP-Integrationen, Automatisierung & KI (NLP). Ich liefere saubere Lösungen – schnell, pragmatisch, zuverlässig." />
+  <meta name="author" content="Nicklas Desens" />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Nicklas Desens – Softwareentwickler" />
+  <meta property="og:description" content="Python, Firebird/SQL, ERP, Automatisierung & KI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://desens.dev" />
+  <meta property="og:image" content="https://desens.dev/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nicklas Desens – Softwareentwickler" />
+  <meta name="twitter:description" content="Python, Firebird/SQL, ERP, Automatisierung & KI." />
+  <meta name="twitter:image" content="https://desens.dev/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer data-domain="desens.dev" src="https://plausible.io/js/script.js"></script>
+  <style>
+    :root{--bg:#0b1220;--panel:#0e172a;--muted:#94a3b8;--text:#e2e8f0;--brand:#7c3aed;--brand-2:#22d3ee;--card:#0b1220;}
+    *{box-sizing:border-box} html,body{height:100%} body{margin:0;background:linear-gradient(180deg,var(--bg),#0d1426 60%, #0b1220);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,18,32,.6);border-bottom:1px solid rgba(148,163,184,.12);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.2px}
+    .logo-mark{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2), var(--brand));box-shadow:0 0 0 3px rgba(124,58,237,.15), 0 6px 24px rgba(34,211,238,.2)}
+    .nav a{opacity:.9} .nav-links{display:flex;gap:18px;font-weight:600}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg,#0f172a,#0b1220);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02), 0 10px 30px rgba(124,58,237,.15);transition:.2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), 0 14px 36px rgba(34,211,238,.18)}
+    .btn.primary{background:linear-gradient(180deg, rgba(124,58,237,.95), rgba(124,58,237,.85));border-color:rgba(124,58,237,.8);color:white}
+    .hero{padding:72px 24px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .hero h1{font-weight:800;line-height:1.05;font-size:clamp(32px,4.2vw,54px);margin:0}
+    .hero p{color:var(--muted);font-size:clamp(16px,1.6vw,18px)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.2);color:#cbd5e1}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(148,163,184,.15);border-radius:18px;padding:20px}
+    .grid{display:grid;gap:18px} .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    section{padding:56px 24px} h2{font-size:clamp(22px,2.6vw,32px)} .pill{padding:6px 10px;border:1px solid rgba(148,163,184,.18);border-radius:999px;color:#cbd5e1;background:rgba(148,163,184,.08);font-size:12px}
+    .list{display:flex;flex-direction:column;gap:10px;color:#cbd5e1} .muted{color:#94a3b8}
+    footer{padding:40px 24px;border-top:1px solid rgba(148,163,184,.12);color:#94a3b8}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}.nav-links{display:none}}
+    input[type=email]{flex:1;min-width:180px;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:#0b1220;color:#e2e8f0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <a href="#" class="logo" aria-label="Startseite"><span class="logo-mark" aria-hidden="true"></span><span>desens.dev</span></a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#firebird">Firebird‑Assistent</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+      <a class="btn" href="#kontakt"><span class="chip">Verfügbar</span> Projekt anfragen</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <h1>Ich baue Software, die Probleme <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">löst</span> – nicht nur Tickets.</h1>
+        <p>Ich bin <b>Nicklas Desens</b>, Softwareentwickler (Python, <b>Firebird/SQL</b>, ERP‑Integrationen, Automatisierung & KI/NLP). Ich liefere pragmatische Lösungen, die schnell Mehrwert schaffen – sauber, nachvollziehbar, robust.</p>
+        <div class="tags">
+          <span class="tag">Python · FastAPI</span><span class="tag">Firebird · SQL · ERP</span><span class="tag">Automatisierung</span><span class="tag">NLP · OpenAI API</span><span class="tag">React · MUI</span>
+        </div>
+        <div style="margin-top:18px"><a class="btn primary" href="#kontakt">Projekt anfragen</a> <a class="btn" href="#leistungen">Was ich anbiete</a></div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="grid cols-2">
+            <div><b>+ Produktivität</b><div class="muted">Automatisierung spart Zeit & Kosten</div></div>
+            <div><b>Saubere Schnittstellen</b><div class="muted">APIs, die man gern nutzt</div></div>
+            <div><b>Schnelle Umsetzung</b><div class="muted">Prototyp → MVP → Rollout</div></div>
+            <div><b>Qualität</b><div class="muted">Tests, Logs & Monitoring</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen" class="container">
+      <h2>Leistungen</h2>
+      <p class="muted">Ich unterstütze dort, wo Impact entsteht – von Datenbank bis Frontend.</p>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="card"><div class="pill">Firebird · SQL · ERP</div><h3>ERP‑Integrationen & Datenbanken</h3>
+          <ul class="list"><li>Firebird 2.5/4 – Prozeduren, Optimierung, Migration</li><li>Datenmodellierung & Performance‑Tuning</li><li>Abstraktionen für langlebige Systeme</li></ul></div>
+        <div class="card"><div class="pill">Python · Automatisierung</div><h3>APIs & Automatisierung</h3>
+          <ul class="list"><li>FastAPI, Auth (JWT), Background‑Jobs</li><li>ETL‑Pipelines, E‑Mail/Beleg‑Parsing</li><li>Deploy: Vercel, Hetzner u. a.</li></ul></div>
+        <div class="card"><div class="pill">KI · NLP</div><h3>Praktische KI‑Lösungen</h3>
+          <ul class="list"><li>OpenAI‑API, Embeddings, Suche</li><li>Ticket‑Klassifikation, Textextraktion</li><li>PoC → Produktion</li></ul></div>
+      </div>
+    </section>
+
+    <section id="projekte" class="container">
+      <h2>Ausgewählte Arbeiten</h2>
+      <div class="grid cols-2" style="margin-top:18px">
+        <article class="card"><h3>Ticket‑Management mit KI‑Vorschlägen</h3><p class="muted">FastAPI + React. Automatische Vorschläge (Kategorie, Dringlichkeit, Zuständigkeit) via NLP. Integration in Firebird 4.</p></article>
+        <article class="card"><h3>Dokumenten‑ & Beleg‑Extraktion</h3><p class="muted">Python‑Pipelines, OCR & strukturierte Extraktion für Auftragsmails. Ausgabe in definierte Formate und Übergabe ans ERP.</p></article>
+      </div>
+    </section>
+
+    <section id="firebird" class="container">
+      <h2>Firebird‑Assistent</h2>
+      <p class="muted">Leichter Helfer für Firebird‑Projekte: Prozeduren, Checks, Performance‑Tipps. Aktuell <b>in Entwicklung</b>.</p>
+      <div class="card"><a class="btn" href="https://github.com/xootec/firebird-assistant" target="_blank" rel="noreferrer">🔧 GitHub ansehen</a></div>
+    </section>
+
+    <section id="kontakt" class="container">
+      <h2>Projekt anfragen</h2>
+      <div class="grid cols-2" style="margin-top:18px">
+        <div class="card">
+          <p><b>Ich bin verfügbar für:</b></p>
+          <ul class="list"><li>Teil‑/Projektzeit (remote, D‑A‑CH)</li><li>Fixpreis‑Projekte mit klarer Spezifikation</li><li>Prototypen & MVPs</li></ul>
+          <p class="muted">Antwort meist am selben Tag.</p>
+        </div>
+        <div class="card">
+          <p><b>Kontakt</b></p>
+          <p class="muted">Schreib mir – kurz dein Vorhaben + Ziel:</p>
+          <p><a class="btn primary" href="mailto:nicklas@desens.dev">E‑Mail senden</a></p>
+          <div class="cta"><a class="btn" href="https://www.linkedin.com/in/nicklas-desens" target="_blank" rel="noreferrer">LinkedIn</a> <a class="btn" href="https://github.com/xootec" target="_blank" rel="noreferrer">GitHub</a></div>
+          <hr style="border-color: rgba(148,163,184,.15); margin:16px 0">
+          <p><b>Release‑Info zum Firebird‑Assistenten erhalten</b></p>
+          <form action="https://formspree.io/f/xblzbkng" method="POST" class="list" style="gap:12px">
+            <!-- Anti-bot honeypot (optional) -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Redirect nach Erfolg -->
+            <input type="hidden" name="_redirect" value="https://desens.dev/danke.html">
+            <!-- Betreff in deiner Mail -->
+            <input type="hidden" name="_subject" value="Neue Anfrage über desens.dev">
+            <label>
+              <span class="muted" style="display:block;margin-bottom:6px">Dein Name</span>
+              <input name="name" type="text" placeholder="Vor- und Nachname" required aria-label="Name" style="width:100%;min-width:180px;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:#0b1220;color:#e2e8f0">
+            </label>
+            <label>
+              <span class="muted" style="display:block;margin-bottom:6px">E‑Mail</span>
+              <input name="email" type="email" placeholder="you@example.com" required aria-label="E‑Mail" style="width:100%;min-width:180px;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:#0b1220;color:#e2e8f0">
+            </label>
+            <label>
+              <span class="muted" style="display:block;margin-bottom:6px">Nachricht</span>
+              <textarea name="message" rows="5" placeholder="Kurz dein Vorhaben + Ziel" required aria-label="Nachricht" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:#0b1220;color:#e2e8f0;resize:vertical"></textarea>
+            </label>
+            <div>
+              <button class="btn" type="submit">Absenden</button>
+            </div>
+          </form>
+          <p class="muted" style="font-size:12px;margin-top:6px">Kein Spam. Abmeldung jederzeit möglich.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Nicklas Desens · desens.dev</div>
+      <div class="muted"><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+
+
+
+
+
