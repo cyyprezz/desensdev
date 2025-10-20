@@ -247,6 +247,66 @@
             background: #0b1220;
             color: #e2e8f0
         }
+
+        /* Grunddesign aller Buttons */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        /* Farbverlauf-Brand-Stil */
+        .btn.primary {
+            background: linear-gradient(135deg, #7c3aed, #22d3ee);
+            box-shadow: 0 0 0 rgba(124, 58, 237, 0);
+        }
+
+        /* Hover-Effekt: Glow + leichte Bewegung */
+        .btn.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+        }
+
+        /* Sekundäre Buttons (z. B. Mail-Kopie) */
+        .btn.secondary {
+            background: #1e293b;
+            color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .btn.secondary:hover {
+            background: #334155;
+            color: #fff;
+        }
+
+        /* Inputs & Textareas */
+        input,
+        textarea {
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            background: #0b1220;
+            color: #e2e8f0;
+            padding: 12px 14px;
+            width: 100%;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #22d3ee;
+            outline: none;
+        }
+
+        /* Optional: Leichter Glow beim Hover über den Absenden-Button */
+        form .btn.primary:hover {
+            box-shadow: 0 0 14px rgba(34, 211, 238, 0.6);
+        }
     </style>
 </head>
 
@@ -379,7 +439,7 @@
                     <p class="muted">Schreib mir – kurz dein Vorhaben + Ziel:</p>
                     <p>
                         <a class="btn primary" href="mailto:nicklas@desens.dev" id="mailto-btn">E-Mail senden</a>
-                        <button class="btn primary" type="button" id="copy-mail">Adresse kopieren</button>
+                        <button class="btn" type="button" id="copy-mail">Adresse kopieren</button>
                     </p>
                     <script>
                         document.getElementById('copy-mail')?.addEventListener('click', async () => {
@@ -390,7 +450,7 @@
                         });
                     </script>
 
-                    <div class="cta"><a class="btn" href="https://linkedin.com/in/nicklas-desens-588369181"
+                    <div class="cta"><a class="btn" href="https://www.linkedin.com/in/nicklas-desens-588369181/"
                             target="_blank" rel="noreferrer">LinkedIn</a> <a class="btn"
                             href="https://github.com/cyyprezz" target="_blank" rel="noreferrer">GitHub</a></div>
                     <hr style="border-color: rgba(148,163,184,.15); margin:16px 0">
