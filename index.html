@@ -349,8 +349,9 @@
         }
 
         /* =============================
-   Social Section Styling
+   Social Section + Icon Buttons
 ============================= */
+
         .social-section {
             text-align: center;
             margin-top: 60px;
@@ -379,11 +380,57 @@
             flex-wrap: wrap;
         }
 
-        /* =============================
-   Social Icon Animations
-============================= */
+        /* ---------- ICON BUTTONS ---------- */
+        .icon-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #22d3ee);
+            color: white;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 0 rgba(34, 211, 238, 0);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
 
-        /* sanfter „Pulse“ beim Hover */
+        .icon-btn:hover {
+            background: linear-gradient(135deg, #7c3aed, #22d3ee);
+            color: #fff;
+            transform: rotate(10deg) scale(1.1);
+            animation: pulse-glow 1.2s ease-in-out infinite;
+        }
+
+        /* Tooltip */
+        .icon-btn::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -34px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            color: #e2e8f0;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .icon-btn:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        /* ---------- ANIMATIONS ---------- */
         @keyframes pulse-glow {
             0% {
                 box-shadow: 0 0 0 rgba(34, 211, 238, 0);
@@ -398,19 +445,6 @@
             }
         }
 
-        /* leichte Rotation + Farbeffekt */
-        .icon-btn:hover {
-            transform: rotate(10deg) scale(1.1);
-            animation: pulse-glow 1.2s ease-in-out infinite;
-        }
-
-        /* „Bounce-in“ Effekt beim Laden (nur einmalig) */
-        .icon-btn {
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeInUp 0.5s ease forwards;
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -423,7 +457,7 @@
             }
         }
 
-        /* kleine Verzögerung für jedes Icon */
+        /* Verzögerung für jedes Icon */
         .social-links a:nth-child(1) {
             animation-delay: 0.1s;
         }
@@ -450,7 +484,7 @@
             <nav class="nav-links" aria-label="Hauptnavigation">
                 <a href="#leistungen">Leistungen</a>
                 <a href="#projekte">Projekte</a>
-         <!--        <a href="#firebird">Firebird‑Assistent</a> -->
+                <!--        <a href="#firebird">Firebird‑Assistent</a> -->
                 <a href="#kontakt">Kontakt</a>
                 <a href="/impressum.html">Impressum</a>
                 <a href="/datenschutz.html">Datenschutz</a>
@@ -627,18 +661,20 @@
         </p>
 
         <div class="social-links">
-            <a href="https://github.com/cyyprezz" target="_blank" aria-label="GitHub" class="icon-btn">
+            <a href="https://github.com/cyyprezz" target="_blank" aria-label="GitHub" data-tooltip="GitHub"
+                class="icon-btn">
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/nicklas-desens-588369181/" target="_blank" aria-label="LinkedIn"
-                class="icon-btn">
+                data-tooltip="LinkedIn" class="icon-btn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://www.malt.de/profile/nicklasdesens" target="_blank" aria-label="Malt" class="icon-btn">
+            <a href="https://www.malt.de/profile/nicklasdesens" target="_blank" aria-label="Malt" data-tooltip="Malt"
+                class="icon-btn">
                 <i class="fa-solid fa-briefcase"></i>
             </a>
             <a href="https://www.fiverr.com/nicklasd?public_mode=true" target="_blank" aria-label="Fiverr"
-                class="icon-btn">
+                data-tooltip="Fiverr" class="icon-btn">
                 <i class="fa-solid fa-star"></i>
             </a>
         </div>
