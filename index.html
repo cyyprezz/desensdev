@@ -75,6 +75,7 @@
             --brand: #7c3aed;
             --brand-2: #22d3ee;
             --card: #0b1220;
+            --header-offset: 84px;
         }
 
         * {
@@ -92,6 +93,10 @@
             color: var(--text);
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
         }
+
+        /* Smooth anchor scrolling and offset for sticky header */
+        html { scroll-behavior: smooth }
+        section[id] { scroll-margin-top: var(--header-offset) }
 
         a {
             color: inherit;
@@ -145,6 +150,19 @@
             gap: 18px;
             font-weight: 600
         }
+
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid rgba(148,163,184,.3);
+            color: #e2e8f0;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 16px;
+        }
+
+        .nav-toggle:focus { outline: 2px solid #22d3ee }
 
         .btn {
             display: inline-flex;
@@ -267,6 +285,8 @@
             .nav-links {
                 display: none
             }
+
+            .nav-toggle { display: inline-flex; align-items: center; gap: 8px }
         }
 
         input[type=email] {
@@ -277,31 +297,6 @@
             border: 1px solid rgba(148, 163, 184, .22);
             background: #0b1220;
             color: #e2e8f0
-        }
-
-        /* Grunddesign aller Buttons */
-        .btn {
-            display: inline-block;
-            font-weight: 600;
-            padding: 12px 20px;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s ease;
-            color: #fff;
-        }
-
-        /* Farbverlauf-Brand-Stil */
-        .btn.primary {
-            background: linear-gradient(135deg, #7c3aed, #22d3ee);
-            box-shadow: 0 0 0 rgba(124, 58, 237, 0);
-        }
-
-        /* Hover-Effekt: Glow + leichte Bewegung */
-        .btn.primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
         }
 
         /* Sekundäre Buttons (z. B. Mail-Kopie) */
@@ -376,6 +371,26 @@
             padding: 24px 0;
             background: #0b1220;
             text-align: center;
+        }
+
+        /* Mobile menu panel */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: rgba(11,18,32,.98);
+            border-top: 1px solid rgba(148,163,184,.12);
+            z-index: 60;
+            padding: 16px 24px;
+        }
+
+        .mobile-nav a { display:block; padding: 10px 0; border-bottom: 1px solid rgba(148,163,184,.08) }
+        .mobile-nav a:last-child { border-bottom: 0 }
+
+        @media (max-width: 900px) {
+            .mobile-nav.open { display: block }
         }
 
         /* =============================
@@ -578,9 +593,20 @@
                 <a href="/impressum.html">Impressum</a>
                 <a href="/datenschutz.html">Datenschutz</a>
             </nav>
-            <a class="btn" href="#kontakt"><span class="chip">Verfügbar</span> Projekt anfragen</a>
+            <div style="display:flex;gap:10px;align-items:center">
+                <a class="btn" href="#kontakt"><span class="chip">Verfügbar</span> Projekt anfragen</a>
+                <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+            </div>
         </div>
     </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
 
     <main>
         <section class="hero container">
@@ -843,6 +869,19 @@
     </footer>
 
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const panel = document.getElementById('mobile-nav');
+        toggle?.addEventListener('click', () => {
+            const open = panel.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        // Close panel on link click
+        panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            panel.classList.remove('open');
+            toggle?.setAttribute('aria-expanded', 'false');
+        }));
+    </script>
 </body>
 
 </html>
