@@ -20,17 +20,32 @@
   <meta property="og:image" content="https://desens.dev/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <style>
-    :root { --bg:#0b1220; --text:#e2e8f0; --muted:#94a3b8; --brand:#7c3aed; --brand2:#22d3ee }
-    body { margin:0; background:#0b1220; color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px }
+    :root { --bg:#0b1220; --panel:#0e172a; --muted:#94a3b8; --text:#e2e8f0; --brand:#7c3aed; --brand-2:#22d3ee; --header-offset:72px }
+    html { scroll-behavior:smooth }
+    body { margin:0; background:#0b1220; color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; padding-top: var(--header-offset) }
+    body.no-scroll { overflow:hidden }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px }
     a { color: inherit; text-decoration: none }
     .pill { display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.18); background:rgba(148,163,184,.08); color:#cbd5e1; font-size:12px }
     .lead { color:#cbd5e1; line-height:1.7 }
     .card { background: rgba(255,255,255,.03); border:1px solid rgba(148,163,184,.15); border-radius:14px; padding:16px }
-    .btn { display:inline-block; font-weight:600; padding:12px 16px; border-radius:12px; color:#fff; background: linear-gradient(135deg, var(--brand), var(--brand2)) }
-    h1 span, h2 span { background: linear-gradient(135deg, var(--brand), var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid rgba(148,163,184,.18); background: linear-gradient(180deg, #0f172a, #0b1220) }
+    .btn.primary { background: linear-gradient(180deg, rgba(124,58,237,.95), rgba(124,58,237,.85)); border-color: rgba(124,58,237,.8) }
+    .btn.secondary { background:#1e293b; color:#e2e8f0; border:1px solid rgba(148,163,184,.3) }
+    h1 span, h2 span { background: linear-gradient(135deg, var(--brand), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent }
     ul { margin: 0 0 0 18px }
     .muted { color: var(--muted) }
+    header { position: fixed; top:0; left:0; right:0; backdrop-filter:saturate(180%) blur(8px); background: rgba(11,18,32,.6); border-bottom:1px solid rgba(148,163,184,.12); z-index:100 }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 20px }
+    .logo { display:flex; gap:10px; align-items:center; font-weight:800 }
+    .logo-mark { width:28px; height:28px; border-radius:8px; background: conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2), var(--brand)) }
+    .nav-links { display:flex; gap:14px; font-weight:600 }
+    .nav-toggle { display:none; background:none; border:1px solid rgba(148,163,184,.3); color:#e2e8f0; border-radius:12px; padding:8px 12px; font-size:16px }
+    .mobile-nav { display:none; position:fixed; top:var(--header-offset); left:0; right:0; background: rgba(11,18,32,.98); border-top:1px solid rgba(148,163,184,.12); z-index:60; padding:16px 24px }
+    .mobile-nav a { display:block; padding:10px 0; border-bottom:1px solid rgba(148,163,184,.08) }
+    .mobile-nav a:last-child { border-bottom:0 }
+    @media (max-width: 900px) { .nav-links { display:none } .nav-toggle{ display:inline-flex; align-items:center; gap:8px } .mobile-nav.open { display:block } }
+    footer { margin-top:60px; padding:24px 0; background:#0b1220; color:#94a3b8; border-top:1px solid rgba(148,163,184,.12); text-align:center }
   </style>
   <script type="application/ld+json">
   {
@@ -69,6 +84,30 @@
   </script>
 </head>
 <body>
+  <header>
+    <div class="nav container">
+      <a href="/" class="logo" aria-label="Startseite"><span class="logo-mark" aria-hidden="true"></span><span>desens.dev</span></a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="/#leistungen">Leistungen</a>
+        <a href="/#projekte">Projekte</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn" href="/#kontakt">Projekt anfragen</a>
+        <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
+    <a href="/#leistungen">Leistungen</a>
+    <a href="/#projekte">Projekte</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a href="/ueber-mich.html">Über mich</a>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </nav>
+  <main>
   <div class="container">
     <p class="pill">Lokal</p>
     <h1>IT‑Hilfe in <span>Augsburg</span></h1>
@@ -91,8 +130,28 @@
 
     <p><a class="btn" href="mailto:nicklas@desens.dev">Kontakt per E‑Mail</a> &nbsp; <a href="/ueber-mich.html">Über mich</a> · <a href="/">Startseite</a></p>
 
-    <p class="muted" style="margin-top:32px"><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
   </div>
-</body>
-</html>
-
+  </main>
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Nicklas Desens · desens.dev</div>
+      <div class="muted"><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const panel = document.getElementById('mobile-nav');
+    toggle?.addEventListener('click', () => {
+      const open = panel.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('no-scroll', open);
+    });
+    panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      panel.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+    }));
+  </script>
+  </body>
+  </html>

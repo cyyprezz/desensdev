@@ -94,6 +94,7 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto;
             padding-top: var(--header-offset)
         }
+        body.no-scroll { overflow: hidden }
 
         /* Smooth anchor scrolling and offset for sticky header */
         html { scroll-behavior: smooth }
@@ -164,6 +165,8 @@
         }
 
         .nav-toggle:focus { outline: 2px solid #22d3ee }
+
+        .chip { display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px; font-size:12px; background: rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.35); color:#a5f3fc }
 
         .btn {
             display: inline-flex;
@@ -273,9 +276,12 @@
         }
 
         footer {
-            padding: 40px 24px;
+            margin-top: 60px;
+            padding: 24px 0;
+            background: #0b1220;
+            color: #94a3b8;
             border-top: 1px solid rgba(148, 163, 184, .12);
-            color: #94a3b8
+            text-align: center;
         }
 
         @media (max-width: 900px) {
@@ -288,6 +294,14 @@
             }
 
             .nav-toggle { display: inline-flex; align-items: center; gap: 8px }
+
+            /* Responsive grids */
+            .grid.cols-3 { grid-template-columns: repeat(2, 1fr) }
+            .grid.cols-2 { grid-template-columns: 1fr }
+        }
+
+        @media (max-width: 600px) {
+            .grid.cols-3 { grid-template-columns: 1fr }
         }
 
         input[type=email] {
@@ -335,44 +349,10 @@
             box-shadow: 0 0 14px rgba(34, 211, 238, 0.6);
         }
 
-        /* =============================
-   Social Icon Buttons
-============================= */
-        .social-links {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 32px;
-        }
-
-        .icon-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #7c3aed, #22d3ee);
-            color: white;
-            font-size: 22px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 0 0 rgba(34, 211, 238, 0);
-        }
-
-        .icon-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
-            color: #fff;
-        }
-
-        /* Optional: dunkler Hintergrund im Footer */
-        footer {
-            margin-top: 60px;
-            padding: 24px 0;
-            background: #0b1220;
-            text-align: center;
-        }
+        /* Social Icon Buttons (konsolidiert) */
+        .social-links { display:flex; gap:12px; justify-content:center; margin-top:32px }
+        .icon-btn { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background: linear-gradient(135deg, #7c3aed, #22d3ee); color:#fff; font-size:22px; transition: all .3s ease; text-decoration:none; box-shadow: 0 0 0 rgba(34,211,238,0) }
+        .icon-btn:hover { transform: translateY(-2px); box-shadow: 0 0 12px rgba(34,211,238,.6); color:#fff }
 
         /* Mobile menu panel */
         .mobile-nav {
@@ -874,11 +854,13 @@
         toggle?.addEventListener('click', () => {
             const open = panel.classList.toggle('open');
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.body.classList.toggle('no-scroll', open);
         });
         // Close panel on link click
         panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
             panel.classList.remove('open');
             toggle?.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
         }));
     </script>
 </body>

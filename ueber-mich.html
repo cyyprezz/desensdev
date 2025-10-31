@@ -16,6 +16,10 @@
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="alternate icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Open Graph / Twitter -->
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="profile" />
@@ -28,19 +32,38 @@
     <meta name="twitter:description" content="Softwareentwicklung & Automatisierung im Raum Augsburg." />
     <meta name="twitter:image" content="https://desens.dev/og-image.png" />
     <style>
-        body { margin: 0; background: #0b1220; color: #e2e8f0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto }
-        .container { max-width: 900px; margin: 0 auto; padding: 24px }
+        :root { --bg:#0b1220; --panel:#0e172a; --muted:#94a3b8; --text:#e2e8f0; --brand:#7c3aed; --brand-2:#22d3ee; --card:#0b1220; --header-offset:72px }
+        html { scroll-behavior: smooth }
+        body { margin: 0; background: #0b1220; color: #e2e8f0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto; padding-top: var(--header-offset) }
+        body.no-scroll { overflow:hidden }
+        .container { max-width: 1100px; margin: 0 auto; padding: 24px }
         a { color: inherit; text-decoration: none }
         .muted { color: #94a3b8 }
         .lead { color: #cbd5e1; line-height: 1.7 }
         .pill { display: inline-block; padding: 6px 10px; border: 1px solid rgba(148,163,184,.18); border-radius: 999px; background: rgba(148,163,184,.08); font-size: 12px; color: #cbd5e1 }
         .section { margin: 28px 0 }
         .card { background: rgba(255,255,255,.03); border: 1px solid rgba(148,163,184,.15); border-radius: 14px; padding: 16px }
-        .btn { display:inline-block; font-weight:600; padding:12px 16px; border-radius:12px; color:#fff; background: linear-gradient(135deg,#7c3aed,#22d3ee) }
+        .btn { display:inline-flex; align-items:center; gap:10px; font-weight:600; padding:12px 16px; border-radius:14px; color:#fff; background: linear-gradient(180deg,#0f172a,#0b1220); border:1px solid rgba(148,163,184,.18) }
+        .btn.primary { background: linear-gradient(180deg, rgba(124,58,237,.95), rgba(124,58,237,.85)); border-color: rgba(124,58,237,.8) }
+        .btn.secondary { background:#1e293b; color:#e2e8f0; border:1px solid rgba(148,163,184,.3) }
+        .btn:hover { transform: translateY(-1px) }
+        .chip { display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px; font-size:12px; background: rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.35); color:#a5f3fc }
         h1 span.gradient, h2 span.gradient { background: linear-gradient(135deg,#7c3aed,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent }
         .portrait { display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
         .portrait img { width: 160px; height: 160px; object-fit: cover; border-radius: 14px; border:1px solid rgba(148,163,184,.2); box-shadow: 0 10px 30px rgba(124,58,237,.12) }
         .portrait figcaption { color:#94a3b8; font-size: 14px }
+        header { position: fixed; top:0; left:0; right:0; backdrop-filter:saturate(180%) blur(8px); background: rgba(11,18,32,.6); border-bottom:1px solid rgba(148,163,184,.12); z-index:100 }
+        .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 20px }
+        .logo { display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px }
+        .logo-mark { width:28px; height:28px; border-radius:8px; background: conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2), var(--brand)); box-shadow: 0 0 0 3px rgba(124,58,237,.15), 0 6px 24px rgba(34,211,238,.2) }
+        .nav-links { display:flex; gap:14px; font-weight:600 }
+        .nav-toggle { display:none; background:none; border:1px solid rgba(148,163,184,.3); color:#e2e8f0; border-radius:12px; padding:8px 12px; font-size:16px }
+        .nav-toggle:focus { outline:2px solid #22d3ee }
+        .mobile-nav { display:none; position:fixed; top:var(--header-offset); left:0; right:0; background: rgba(11,18,32,.98); border-top:1px solid rgba(148,163,184,.12); z-index:60; padding:16px 24px }
+        .mobile-nav a { display:block; padding:10px 0; border-bottom:1px solid rgba(148,163,184,.08) }
+        .mobile-nav a:last-child { border-bottom:0 }
+        @media (max-width: 900px) { .nav-links { display:none } .nav-toggle{ display:inline-flex; align-items:center; gap:8px } .mobile-nav.open { display:block } }
+        footer { margin-top:60px; padding: 24px 0; background:#0b1220; color:#94a3b8; border-top:1px solid rgba(148,163,184,.12); text-align:center }
     </style>
     <script type="application/ld+json">
     {
@@ -70,6 +93,30 @@
 </head>
 
 <body>
+    <header>
+        <div class="nav container">
+            <a href="/" class="logo" aria-label="Startseite"><span class="logo-mark" aria-hidden="true"></span><span>desens.dev</span></a>
+            <nav class="nav-links" aria-label="Hauptnavigation">
+                <a href="/#leistungen">Leistungen</a>
+                <a href="/#projekte">Projekte</a>
+                <a href="/ueber-mich.html">Über mich</a>
+                <a href="/#kontakt">Kontakt</a>
+            </nav>
+            <div style="display:flex;gap:10px;align-items:center">
+                <a class="btn" href="/#kontakt"><span class="chip">Verfügbar</span> Projekt anfragen</a>
+                <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+            </div>
+        </div>
+    </header>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
+        <a href="/#leistungen">Leistungen</a>
+        <a href="/#projekte">Projekte</a>
+        <a href="/#kontakt">Kontakt</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
+    <main>
     <div class="container">
         <p class="pill">Über mich</p>
         <h1>Hallo, ich bin <span class="gradient">Nicklas</span>.</h1>
@@ -81,7 +128,7 @@
             <figure class="portrait" aria-label="Portrait von Nicklas Desens">
                 <picture>
                     <source srcset="/portrait.webp" type="image/webp">
-                    <img src="/portrait.jpg" alt="Nicklas Desens – Softwareentwickler aus dem Raum Augsburg" loading="lazy" width="160" height="160">
+                    <img src="/ME.jpg" alt="Nicklas Desens – Softwareentwickler aus dem Raum Augsburg" loading="lazy" width="160" height="160">
                 </picture>
                 <figcaption>
                     Ein Foto sagt mehr als tausend Worte – gern persönlicher Kontakt auf Augenhöhe. <span class="muted">(Datei: <code>/portrait.jpg</code>)</span>
@@ -120,8 +167,29 @@
             <p><a class="btn" href="mailto:nicklas@desens.dev">Kontakt per E‑Mail</a> &nbsp; <a href="/">← Zurück zur Startseite</a></p>
         </div>
 
-        <p class="muted" style="margin-top:32px"><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
     </div>
+    </main>
+    <footer class="container">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <div>© <span id="y"></span> Nicklas Desens · desens.dev</div>
+            <div class="muted"><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+        </div>
+    </footer>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const panel = document.getElementById('mobile-nav');
+        toggle?.addEventListener('click', () => {
+            const open = panel.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.body.classList.toggle('no-scroll', open);
+        });
+        panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            panel.classList.remove('open');
+            toggle?.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+        }));
+    </script>
 </body>
 
 </html>
