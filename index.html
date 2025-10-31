@@ -191,6 +191,13 @@
             color: white
         }
 
+        /* CTA layout in hero */
+        .actions { display:flex; flex-wrap:wrap; gap: 10px }
+        .actions .btn { min-height: 44px }
+        @media (max-width: 600px) {
+            .actions .cta-local { flex-basis: 100% }
+        }
+
         .hero {
             padding: 72px 24px 48px;
             display: grid;
@@ -601,8 +608,12 @@
                         class="tag">Automatisierung</span><span class="tag">NLP · OpenAI API</span><span
                         class="tag">React · MUI</span>
                 </div>
-                <div style="margin-top:18px"><a class="btn primary" href="#kontakt">Projekt anfragen</a> <a class="btn"
-                        href="#leistungen">Was ich anbiete</a> <a class="btn" href="/ueber-mich.html">Über mich</a> <a class="btn secondary" href="/it-hilfe-augsburg.html">IT‑Hilfe Augsburg</a></div>
+                <div class="actions" style="margin-top:18px">
+                    <a class="btn primary" href="#kontakt">Projekt anfragen</a>
+                    <a class="btn" href="#leistungen">Was ich anbiete</a>
+                    <a class="btn" href="/ueber-mich.html">Über mich</a>
+                    <a class="btn secondary cta-local" href="/it-hilfe-augsburg.html">IT‑Hilfe Augsburg</a>
+                </div>
             </div>
             <div>
                 <div class="card">
