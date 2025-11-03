@@ -94,11 +94,19 @@
             font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto;
             padding-top: var(--header-offset)
         }
-        body.no-scroll { overflow: hidden }
+
+        body.no-scroll {
+            overflow: hidden
+        }
 
         /* Smooth anchor scrolling and offset for sticky header */
-        html { scroll-behavior: smooth }
-        section[id] { scroll-margin-top: var(--header-offset) }
+        html {
+            scroll-behavior: smooth
+        }
+
+        section[id] {
+            scroll-margin-top: var(--header-offset)
+        }
 
         a {
             color: inherit;
@@ -113,7 +121,9 @@
 
         header {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             backdrop-filter: saturate(180%) blur(8px);
             background: rgba(11, 18, 32, .6);
             border-bottom: 1px solid rgba(148, 163, 184, .12);
@@ -157,16 +167,44 @@
         .nav-toggle {
             display: none;
             background: none;
-            border: 1px solid rgba(148,163,184,.3);
+            border: 1px solid rgba(148, 163, 184, .3);
             color: #e2e8f0;
             border-radius: 12px;
             padding: 8px 12px;
             font-size: 16px;
         }
 
-        .nav-toggle:focus { outline: 2px solid #22d3ee }
+        .nav-toggle:focus {
+            outline: 2px solid #22d3ee
+        }
 
-        .chip { display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px; font-size:12px; background: rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.35); color:#a5f3fc }
+        .nav-toggle svg {
+            width: 22px;
+            height: 22px
+        }
+
+        .nav-toggle .icon-close {
+            display: none
+        }
+
+        .nav-toggle[aria-expanded="true"] .icon-burger {
+            display: none
+        }
+
+        .nav-toggle[aria-expanded="true"] .icon-close {
+            display: inline
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            background: rgba(34, 211, 238, .12);
+            border: 1px solid rgba(34, 211, 238, .35);
+            color: #a5f3fc
+        }
 
         .btn {
             display: inline-flex;
@@ -192,17 +230,46 @@
         }
 
         /* CTA layout in hero */
-        .actions { display:flex; flex-wrap:wrap; gap: 10px }
-        .actions .btn { min-height: 44px }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .actions .btn {
+            min-height: 44px
+        }
+
         @media (max-width: 600px) {
-            .actions .cta-local { flex-basis: 100% }
+            .actions .cta-local {
+                flex-basis: 100%
+            }
         }
 
         /* Promo-Band für lokale IT-Hilfe */
-        .promo { border-top:1px solid rgba(148,163,184,.12); border-bottom:1px solid rgba(148,163,184,.12); background: rgba(34,211,238,.06) }
-        .promo .inner { display:flex; align-items:center; justify-content:space-between; gap:12px; padding: 8px 0 }
-        .promo .text { color:#cbd5e1 }
-        .btn.sm { padding: 8px 12px; border-radius:12px; font-size:14px }
+        .promo {
+            border-top: 1px solid rgba(148, 163, 184, .12);
+            border-bottom: 1px solid rgba(148, 163, 184, .12);
+            background: rgba(34, 211, 238, .06)
+        }
+
+        .promo .inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 8px 0
+        }
+
+        .promo .text {
+            color: #cbd5e1
+        }
+
+        .btn.sm {
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 14px
+        }
 
         .hero {
             padding: 72px 24px 48px;
@@ -298,23 +365,51 @@
         }
 
         @media (max-width: 900px) {
+            :root {
+                --header-offset: 60px
+            }
+
             .hero {
                 grid-template-columns: 1fr
+            }
+
+            .nav {
+                padding: 10px 16px
+            }
+
+            .logo-mark {
+                width: 24px;
+                height: 24px
+            }
+
+            header .btn {
+                display: none
             }
 
             .nav-links {
                 display: none
             }
 
-            .nav-toggle { display: inline-flex; align-items: center; gap: 8px }
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px
+            }
 
             /* Responsive grids */
-            .grid.cols-3 { grid-template-columns: repeat(2, 1fr) }
-            .grid.cols-2 { grid-template-columns: 1fr }
+            .grid.cols-3 {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .grid.cols-2 {
+                grid-template-columns: 1fr
+            }
         }
 
         @media (max-width: 600px) {
-            .grid.cols-3 { grid-template-columns: 1fr }
+            .grid.cols-3 {
+                grid-template-columns: 1fr
+            }
         }
 
         input[type=email] {
@@ -363,9 +458,33 @@
         }
 
         /* Social Icon Buttons (konsolidiert) */
-        .social-links { display:flex; gap:12px; justify-content:center; margin-top:32px }
-        .icon-btn { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background: linear-gradient(135deg, #7c3aed, #22d3ee); color:#fff; font-size:22px; transition: all .3s ease; text-decoration:none; box-shadow: 0 0 0 rgba(34,211,238,0) }
-        .icon-btn:hover { transform: translateY(-2px); box-shadow: 0 0 12px rgba(34,211,238,.6); color:#fff }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 32px
+        }
+
+        .icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #22d3ee);
+            color: #fff;
+            font-size: 22px;
+            transition: all .3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 0 rgba(34, 211, 238, 0)
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 12px rgba(34, 211, 238, .6);
+            color: #fff
+        }
 
         /* Mobile menu panel */
         .mobile-nav {
@@ -374,17 +493,26 @@
             top: var(--header-offset);
             left: 0;
             right: 0;
-            background: rgba(11,18,32,.98);
-            border-top: 1px solid rgba(148,163,184,.12);
+            background: rgba(11, 18, 32, .98);
+            border-top: 1px solid rgba(148, 163, 184, .12);
             z-index: 60;
             padding: 16px 24px;
         }
 
-        .mobile-nav a { display:block; padding: 10px 0; border-bottom: 1px solid rgba(148,163,184,.08) }
-        .mobile-nav a:last-child { border-bottom: 0 }
+        .mobile-nav a {
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, .08)
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: 0
+        }
 
         @media (max-width: 900px) {
-            .mobile-nav.open { display: block }
+            .mobile-nav.open {
+                display: block
+            }
         }
 
         /* =============================
@@ -570,6 +698,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        header.scrolled {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25)
+        }
     </style>
 </head>
 
@@ -586,7 +718,17 @@
             </nav>
             <div style="display:flex;gap:10px;align-items:center">
                 <a class="btn" href="#kontakt"><span class="chip">Verfügbar</span> Projekt anfragen</a>
-                <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+                <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"
+                    aria-controls="mobile-nav">
+                    <svg class="icon-burger" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
@@ -598,11 +740,13 @@
         <a href="/ueber-mich.html">Über mich</a>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
+        <a class="btn primary" href="#kontakt">Projekt anfragen</a>
     </nav>
     <div class="promo">
         <div class="container inner">
             <div class="text">Neu: IT‑Hilfe in Augsburg</div>
-            <a class="btn secondary sm" href="/it-hilfe-augsburg.html"><i class="fa-solid fa-circle-info"></i> Mehr erfahren</a>
+            <a class="btn secondary sm" href="/it-hilfe-augsburg.html"><i class="fa-solid fa-circle-info"></i> Mehr
+                erfahren</a>
         </div>
     </div>
 
@@ -746,12 +890,14 @@
 
 
 
-        
+
 
         <section id="dokumenten-extraktion" class="container">
             <h2>Dokumenten‑Extraktion</h2>
-            <p class="muted">OCR + strukturierte Extraktion für E‑Mails, Belege und PDFs. Übergabe in definierte Formate (CSV/JSON) oder direkt ans ERP. Anpassbar per Regeln/Prompts.</p>
-            <div class="card"><a class="btn" href="https://github.com/cyyprezz/ai-doc-extractor" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> AI Doc Extractor</a></div>
+            <p class="muted">OCR + strukturierte Extraktion für E‑Mails, Belege und PDFs. Übergabe in definierte Formate
+                (CSV/JSON) oder direkt ans ERP. Anpassbar per Regeln/Prompts.</p>
+            <div class="card"><a class="btn" href="https://github.com/cyyprezz/ai-doc-extractor" target="_blank"
+                    rel="noreferrer"><i class="fab fa-github"></i> AI Doc Extractor</a></div>
         </section>
 
         <section id="firebird" class="container">
@@ -792,7 +938,8 @@
 
                     <div class="cta"><a class="btn" href="https://www.linkedin.com/in/nicklas-desens-588369181/"
                             target="_blank" rel="noreferrer">LinkedIn</a> <a class="btn"
-                            href="https://github.com/cyyprezz" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a></div>
+                            href="https://github.com/cyyprezz" target="_blank" rel="noreferrer"><i
+                                class="fab fa-github"></i> GitHub</a></div>
                     <hr style="border-color: rgba(148,163,184,.15); margin:16px 0">
                     <p><b>Release‑Info zum Firebird‑Assistenten erhalten</b></p>
                     <form action="https://formspree.io/f/xblzbkng" method="POST" class="list" style="gap:12px">
@@ -856,7 +1003,8 @@
     <footer class="container">
         <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
             <div>© <span id="y"></span> Nicklas Desens · desens.dev</div>
-            <div class="muted"><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a>
+            <div class="muted"><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a
+                    href="/datenschutz.html">Datenschutz</a>
             </div>
         </div>
     </footer>
@@ -876,6 +1024,10 @@
             toggle?.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('no-scroll');
         }));
+        const headerEl = document.querySelector('header');
+        const onScroll = () => headerEl?.classList.toggle('scrolled', window.scrollY > 2);
+        onScroll();
+        window.addEventListener('scroll', onScroll);
     </script>
 </body>
 

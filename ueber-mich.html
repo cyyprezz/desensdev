@@ -8,7 +8,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Über mich – IT‑Freelancer im Raum Augsburg | desens.dev</title>
-    <meta name="description" content="Ich bin Nicklas Desens, Softwareentwickler (Python, Datenbanken, Automatisierung & KI) aus dem Raum Augsburg. Unterstützung für Privat, Vereine und KMU." />
+    <meta name="description"
+        content="Ich bin Nicklas Desens, Softwareentwickler (Python, Datenbanken, Automatisierung & KI) aus dem Raum Augsburg. Unterstützung für Privat, Vereine und KMU." />
     <meta name="author" content="Nicklas Desens" />
     <link rel="canonical" href="https://desens.dev/ueber-mich.html" />
     <meta name="theme-color" content="#0f172a" />
@@ -24,7 +25,8 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Über mich – Nicklas Desens, IT‑Freelancer im Raum Augsburg" />
-    <meta property="og:description" content="Softwareentwicklung & Computerhilfe: Python, SQL/Firebird, Automatisierung & KI – lokal im Raum Augsburg und remote in D‑A‑CH." />
+    <meta property="og:description"
+        content="Softwareentwicklung & Computerhilfe: Python, SQL/Firebird, Automatisierung & KI – lokal im Raum Augsburg und remote in D‑A‑CH." />
     <meta property="og:url" content="https://desens.dev/ueber-mich.html" />
     <meta property="og:image" content="https://desens.dev/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -32,38 +34,286 @@
     <meta name="twitter:description" content="Softwareentwicklung & Automatisierung im Raum Augsburg." />
     <meta name="twitter:image" content="https://desens.dev/og-image.png" />
     <style>
-        :root { --bg:#0b1220; --panel:#0e172a; --muted:#94a3b8; --text:#e2e8f0; --brand:#7c3aed; --brand-2:#22d3ee; --card:#0b1220; --header-offset:72px }
-        html { scroll-behavior: smooth }
-        body { margin: 0; background: #0b1220; color: #e2e8f0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto; padding-top: var(--header-offset) }
-        body.no-scroll { overflow:hidden }
-        .container { max-width: 1100px; margin: 0 auto; padding: 24px }
-        a { color: inherit; text-decoration: none }
-        .muted { color: #94a3b8 }
-        .lead { color: #cbd5e1; line-height: 1.7 }
-        .pill { display: inline-block; padding: 6px 10px; border: 1px solid rgba(148,163,184,.18); border-radius: 999px; background: rgba(148,163,184,.08); font-size: 12px; color: #cbd5e1 }
-        .section { margin: 28px 0 }
-        .card { background: rgba(255,255,255,.03); border: 1px solid rgba(148,163,184,.15); border-radius: 14px; padding: 16px }
-        .btn { display:inline-flex; align-items:center; gap:10px; font-weight:600; padding:12px 16px; border-radius:14px; color:#fff; background: linear-gradient(180deg,#0f172a,#0b1220); border:1px solid rgba(148,163,184,.18) }
-        .btn.primary { background: linear-gradient(180deg, rgba(124,58,237,.95), rgba(124,58,237,.85)); border-color: rgba(124,58,237,.8) }
-        .btn.secondary { background:#1e293b; color:#e2e8f0; border:1px solid rgba(148,163,184,.3) }
-        .btn:hover { transform: translateY(-1px) }
-        .chip { display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px; font-size:12px; background: rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.35); color:#a5f3fc }
-        h1 span.gradient, h2 span.gradient { background: linear-gradient(135deg,#7c3aed,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent }
-        .portrait { display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
-        .portrait img { width: 160px; height: 160px; object-fit: cover; border-radius: 14px; border:1px solid rgba(148,163,184,.2); box-shadow: 0 10px 30px rgba(124,58,237,.12) }
-        .portrait figcaption { color:#94a3b8; font-size: 14px }
-        header { position: fixed; top:0; left:0; right:0; backdrop-filter:saturate(180%) blur(8px); background: rgba(11,18,32,.6); border-bottom:1px solid rgba(148,163,184,.12); z-index:100 }
-        .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 20px }
-        .logo { display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px }
-        .logo-mark { width:28px; height:28px; border-radius:8px; background: conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2), var(--brand)); box-shadow: 0 0 0 3px rgba(124,58,237,.15), 0 6px 24px rgba(34,211,238,.2) }
-        .nav-links { display:flex; gap:14px; font-weight:600 }
-        .nav-toggle { display:none; background:none; border:1px solid rgba(148,163,184,.3); color:#e2e8f0; border-radius:12px; padding:8px 12px; font-size:16px }
-        .nav-toggle:focus { outline:2px solid #22d3ee }
-        .mobile-nav { display:none; position:fixed; top:var(--header-offset); left:0; right:0; background: rgba(11,18,32,.98); border-top:1px solid rgba(148,163,184,.12); z-index:60; padding:16px 24px }
-        .mobile-nav a { display:block; padding:10px 0; border-bottom:1px solid rgba(148,163,184,.08) }
-        .mobile-nav a:last-child { border-bottom:0 }
-        @media (max-width: 900px) { .nav-links { display:none } .nav-toggle{ display:inline-flex; align-items:center; gap:8px } .mobile-nav.open { display:block } }
-        footer { margin-top:60px; padding: 24px 0; background:#0b1220; color:#94a3b8; border-top:1px solid rgba(148,163,184,.12); text-align:center }
+        :root {
+            --bg: #0b1220;
+            --panel: #0e172a;
+            --muted: #94a3b8;
+            --text: #e2e8f0;
+            --brand: #7c3aed;
+            --brand-2: #22d3ee;
+            --card: #0b1220;
+            --header-offset: 72px
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: #0b1220;
+            color: #e2e8f0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto;
+            padding-top: var(--header-offset)
+        }
+
+        body.no-scroll {
+            overflow: hidden
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .muted {
+            color: #94a3b8
+        }
+
+        .lead {
+            color: #cbd5e1;
+            line-height: 1.7
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border: 1px solid rgba(148, 163, 184, .18);
+            border-radius: 999px;
+            background: rgba(148, 163, 184, .08);
+            font-size: 12px;
+            color: #cbd5e1
+        }
+
+        .section {
+            margin: 28px 0
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(148, 163, 184, .15);
+            border-radius: 14px;
+            padding: 16px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            padding: 12px 16px;
+            border-radius: 14px;
+            color: #fff;
+            background: linear-gradient(180deg, #0f172a, #0b1220);
+            border: 1px solid rgba(148, 163, 184, .18)
+        }
+
+        .btn.primary {
+            background: linear-gradient(180deg, rgba(124, 58, 237, .95), rgba(124, 58, 237, .85));
+            border-color: rgba(124, 58, 237, .8)
+        }
+
+        .btn.secondary {
+            background: #1e293b;
+            color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, .3)
+        }
+
+        .btn:hover {
+            transform: translateY(-1px)
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            background: rgba(34, 211, 238, .12);
+            border: 1px solid rgba(34, 211, 238, .35);
+            color: #a5f3fc
+        }
+
+        h1 span.gradient,
+        h2 span.gradient {
+            background: linear-gradient(135deg, #7c3aed, #22d3ee);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .portrait {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .portrait img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, .2);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, .12)
+        }
+
+        .portrait figcaption {
+            color: #94a3b8;
+            font-size: 14px
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: saturate(180%) blur(8px);
+            background: rgba(11, 18, 32, .6);
+            border-bottom: 1px solid rgba(148, 163, 184, .12);
+            z-index: 100
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px
+        }
+
+        .logo {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 800;
+            letter-spacing: .2px
+        }
+
+        .logo-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: conic-gradient(from 210deg at 50% 50%, var(--brand), var(--brand-2), var(--brand));
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, .15), 0 6px 24px rgba(34, 211, 238, .2)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            font-weight: 600
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid rgba(148, 163, 184, .3);
+            color: #e2e8f0;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 16px
+        }
+
+        .nav-toggle:focus {
+            outline: 2px solid #22d3ee
+        }
+
+        .nav-toggle svg {
+            width: 22px;
+            height: 22px
+        }
+
+        .nav-toggle .icon-close {
+            display: none
+        }
+
+        .nav-toggle[aria-expanded="true"] .icon-burger {
+            display: none
+        }
+
+        .nav-toggle[aria-expanded="true"] .icon-close {
+            display: inline
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: var(--header-offset);
+            left: 0;
+            right: 0;
+            background: rgba(11, 18, 32, .98);
+            border-top: 1px solid rgba(148, 163, 184, .12);
+            z-index: 60;
+            padding: 16px 24px
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, .08)
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: 0
+        }
+
+        .mobile-nav .btn.primary {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px
+        }
+
+        @media (max-width: 900px) {
+            :root {
+                --header-offset: 60px
+            }
+
+            .nav {
+                padding: 10px 16px
+            }
+
+            .logo-mark {
+                width: 24px;
+                height: 24px
+            }
+
+            header .btn {
+                display: none
+            }
+
+            .nav-links {
+                display: none
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px
+            }
+
+            .mobile-nav.open {
+                display: block
+            }
+        }
+
+        header.scrolled {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25)
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 24px 0;
+            background: #0b1220;
+            color: #94a3b8;
+            border-top: 1px solid rgba(148, 163, 184, .12);
+            text-align: center
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -95,7 +345,8 @@
 <body>
     <header>
         <div class="nav container">
-            <a href="/" class="logo" aria-label="Startseite"><span class="logo-mark" aria-hidden="true"></span><span>desens.dev</span></a>
+            <a href="/" class="logo" aria-label="Startseite"><span class="logo-mark"
+                    aria-hidden="true"></span><span>desens.dev</span></a>
             <nav class="nav-links" aria-label="Hauptnavigation">
                 <a href="/#leistungen">Leistungen</a>
                 <a href="/#projekte">Projekte</a>
@@ -104,7 +355,17 @@
             </nav>
             <div style="display:flex;gap:10px;align-items:center">
                 <a class="btn" href="/#kontakt"><span class="chip">Verfügbar</span> Projekt anfragen</a>
-                <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+                <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"
+                    aria-controls="mobile-nav">
+                    <svg class="icon-burger" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
@@ -115,59 +376,70 @@
         <a href="/ueber-mich.html">Über mich</a>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
+        <a class="btn primary" href="/#kontakt">Projekt anfragen</a>
     </nav>
     <main>
-    <div class="container">
-        <p class="pill">Über mich</p>
-        <h1>Hallo, ich bin <span class="gradient">Nicklas</span>.</h1>
-        <p class="lead">Ich entwickle pragmatische Softwarelösungen mit <b>Python</b>, <b>SQL/Firebird</b>,
-            <b>Automatisierung</b> und <b>KI/NLP</b>. Mein Fokus: schnell spürbarer Mehrwert, saubere Schnittstellen
-            und langlebige Systeme – für Privatpersonen, Vereine und kleine Unternehmen im <b>Raum Augsburg</b> und remote in der D‑A‑CH‑Region.</p>
+        <div class="container">
+            <p class="pill">Über mich</p>
+            <h1>Hallo, ich bin <span class="gradient">Nicklas</span>.</h1>
+            <p class="lead">Ich entwickle pragmatische Softwarelösungen mit <b>Python</b>, <b>SQL/Firebird</b>,
+                <b>Automatisierung</b> und <b>KI/NLP</b>. Mein Fokus: schnell spürbarer Mehrwert, saubere Schnittstellen
+                und langlebige Systeme – für Privatpersonen, Vereine und kleine Unternehmen im <b>Raum Augsburg</b> und
+                remote in der D‑A‑CH‑Region.
+            </p>
 
-        <div class="section card">
-            <figure class="portrait" aria-label="Portrait von Nicklas Desens">
-                <img src="ME.jpg" alt="Nicklas Desens – Softwareentwickler aus dem Raum Augsburg" loading="lazy" width="160" height="160">
-                <figcaption class="muted">Ein Foto sagt mehr als tausend Worte – gern persönlicher Kontakt auf Augenhöhe.</figcaption>
-            </figure>
+            <div class="section card">
+                <figure class="portrait" aria-label="Portrait von Nicklas Desens">
+                    <img src="ME.jpg" alt="Nicklas Desens – Softwareentwickler aus dem Raum Augsburg" loading="lazy"
+                        width="160" height="160">
+                    <figcaption class="muted">Ein Foto sagt mehr als tausend Worte – gern persönlicher Kontakt auf
+                        Augenhöhe.</figcaption>
+                </figure>
+            </div>
+
+            <div class="section card">
+                <h2><span class="gradient">Arbeitsweise & Werte</span></h2>
+                <ul>
+                    <li>Klarer Scope, transparente Kommunikation, kurze Feedback‑Schleifen</li>
+                    <li>Prototyp → MVP → Rollout: lieber nutzbar als über‑perfekt</li>
+                    <li>Nachvollziehbarer Code mit Logs, Tests und Doku wo sinnvoll</li>
+                    <li>Datenschutz & Security als Standard, nicht als Add‑on</li>
+                </ul>
+            </div>
+
+            <div class="section card">
+                <h2><span class="gradient">Standort & Einsatzgebiet</span></h2>
+                <p class="lead">Ich sitze in <b>Scherstetten</b> (Landkreis Augsburg). Vor‑Ort‑Termine sind nach
+                    Absprache in
+                    <b>Augsburg</b>, <b>Schwabmünchen</b>, <b>Landsberg am Lech</b> und Umgebung möglich – ansonsten
+                    arbeite ich remote.
+                </p>
+            </div>
+
+            <div class="section card">
+                <h2><span class="gradient">Wobei ich helfe</span></h2>
+                <ul>
+                    <li>Webseiten & Landingpages mit Fokus auf Struktur, Performance und DSGVO</li>
+                    <li>Automatisierungen für wiederkehrende Prozesse (E‑Mail, Dokumente, Schnittstellen)</li>
+                    <li>ERP‑/Datenbank‑Integration (z. B. Firebird 3/4, SQL, API‑Bridges)</li>
+                    <li>KI‑gestützte Helfer (z. B. Textklassifikation, Extraktion, kleine Assistenten)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <p class="muted">Du suchst einen <b>IT‑Freelancer</b> oder <b>Computerhilfe</b> im <b>Raum Augsburg</b>?
+                    Lass uns sprechen.</p>
+                <p><a class="btn" href="mailto:nicklas@desens.dev">Kontakt per E‑Mail</a> &nbsp; <a href="/">← Zurück
+                        zur Startseite</a></p>
+            </div>
+
         </div>
-
-        <div class="section card">
-            <h2><span class="gradient">Arbeitsweise & Werte</span></h2>
-            <ul>
-                <li>Klarer Scope, transparente Kommunikation, kurze Feedback‑Schleifen</li>
-                <li>Prototyp → MVP → Rollout: lieber nutzbar als über‑perfekt</li>
-                <li>Nachvollziehbarer Code mit Logs, Tests und Doku wo sinnvoll</li>
-                <li>Datenschutz & Security als Standard, nicht als Add‑on</li>
-            </ul>
-        </div>
-
-        <div class="section card">
-            <h2><span class="gradient">Standort & Einsatzgebiet</span></h2>
-            <p class="lead">Ich sitze in <b>Scherstetten</b> (Landkreis Augsburg). Vor‑Ort‑Termine sind nach Absprache in
-                <b>Augsburg</b>, <b>Schwabmünchen</b>, <b>Landsberg am Lech</b> und Umgebung möglich – ansonsten arbeite ich remote.</p>
-        </div>
-
-        <div class="section card">
-            <h2><span class="gradient">Wobei ich helfe</span></h2>
-            <ul>
-                <li>Webseiten & Landingpages mit Fokus auf Struktur, Performance und DSGVO</li>
-                <li>Automatisierungen für wiederkehrende Prozesse (E‑Mail, Dokumente, Schnittstellen)</li>
-                <li>ERP‑/Datenbank‑Integration (z. B. Firebird 3/4, SQL, API‑Bridges)</li>
-                <li>KI‑gestützte Helfer (z. B. Textklassifikation, Extraktion, kleine Assistenten)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <p class="muted">Du suchst einen <b>IT‑Freelancer</b> oder <b>Computerhilfe</b> im <b>Raum Augsburg</b>? Lass uns sprechen.</p>
-            <p><a class="btn" href="mailto:nicklas@desens.dev">Kontakt per E‑Mail</a> &nbsp; <a href="/">← Zurück zur Startseite</a></p>
-        </div>
-
-    </div>
     </main>
     <footer class="container">
         <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
             <div>© <span id="y"></span> Nicklas Desens · desens.dev</div>
-            <div class="muted"><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+            <div class="muted"><a href="/ueber-mich.html">Über mich</a> · <a href="/impressum.html">Impressum</a> · <a
+                    href="/datenschutz.html">Datenschutz</a></div>
         </div>
     </footer>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
@@ -184,6 +456,10 @@
             toggle?.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('no-scroll');
         }));
+        const headerEl = document.querySelector('header');
+        const onScroll = () => headerEl?.classList.toggle('scrolled', window.scrollY > 2);
+        onScroll();
+        window.addEventListener('scroll', onScroll);
     </script>
 </body>
 
