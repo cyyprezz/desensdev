@@ -249,7 +249,8 @@
             background: rgba(11, 18, 32, .98);
             border-top: 1px solid rgba(148, 163, 184, .12);
             z-index: 60;
-            padding: 16px 24px
+            padding: 16px 24px;
+            box-shadow: 0 16px 36px rgba(0,0,0,.45)
         }
 
         .mobile-nav a {
@@ -305,6 +306,8 @@
         header.scrolled {
             box-shadow: 0 8px 20px rgba(0, 0, 0, .25)
         }
+        .backdrop { display:none; position:fixed; inset:0; background: rgba(2,6,23,.6); backdrop-filter: blur(2px); z-index:50 }
+        @media (max-width: 900px) { .backdrop.open { display:block } }
 
         footer {
             margin-top: 60px;
@@ -369,6 +372,7 @@
             </div>
         </div>
     </header>
+    <div id="backdrop" class="backdrop" aria-hidden="true"></div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
         <a href="/#leistungen">Leistungen</a>
         <a href="/#projekte">Projekte</a>
@@ -446,15 +450,18 @@
     <script>
         const toggle = document.querySelector('.nav-toggle');
         const panel = document.getElementById('mobile-nav');
+        const backdrop = document.getElementById('backdrop');
         toggle?.addEventListener('click', () => {
             const open = panel.classList.toggle('open');
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             document.body.classList.toggle('no-scroll', open);
+            backdrop?.classList.toggle('open', open);
         });
         panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
             panel.classList.remove('open');
             toggle?.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('no-scroll');
+            backdrop?.classList.remove('open');
         }));
         const headerEl = document.querySelector('header');
         const onScroll = () => headerEl?.classList.toggle('scrolled', window.scrollY > 2);
